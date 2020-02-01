@@ -1,0 +1,487 @@
+/* BASIC SETUP */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: 'Rochester', cursive;
+  font-size: 22px;
+  background-color: #F7F7F7;
+}
+
+/* COMMON USE */
+.row {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.wide-row {
+  width: 100%;
+}
+
+section {
+  padding: 60px 0;
+}
+
+section:nth-child(odd) {
+  background-color: #E2ADBA;
+}
+
+section:nth-child(odd) h2,
+section:nth-child(odd) h3,
+section:nth-child(odd) p {
+  color: #F7F7F7;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 240%;
+}
+
+h2 {
+  font-size: 220%;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 180%;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+}
+
+/* BUTTON */
+.btn-full {
+  border: none;
+  font-size: 140%;
+  background-color: #fff;
+  color: #F8BECC;
+  padding: 8px 12px;
+  border-radius: 10px;
+  -webkit-transition: background-color 0.4s, color 0.4s;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.btn-full:hover {
+  background-color: #8E0C22;
+  color: #fff;
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+}
+
+/* HEADER */
+header {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(248, 190, 204, 0.9)), to(rgba(248, 190, 204, 0.9))), url(../images/BG2.png);
+  background: linear-gradient(rgba(248, 190, 204, 0.9), rgba(248, 190, 204, 0.9)), url(../images/BG2.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+.header-logo {
+  height: 275px;
+  width: 275px;
+  margin-bottom: 0;
+}
+
+.main-nav {
+  list-style-type: none;
+  float: left;
+  margin-top: 40px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 120%;
+  -webkit-transition: color 0.4s, border 0.1s linear;
+  transition: color 0.4s, border 0.1s linear;
+}
+
+.main-nav li a:hover {
+  color: #8E0C22;
+  border-bottom: 2px solid #8E0C22;
+}
+
+.social-icons {
+  list-style-type: none;
+  float: right;
+  margin-top: 40px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons a,
+.social-icons ion-icon {
+  text-decoration: none;
+  color: #fff;
+  font-size: 130%;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.social-icons a[name=logo-instagram]:hover,
+.social-icons ion-icon[name=logo-instagram]:hover {
+  color: #e95950;
+}
+
+.social-icons a[name=logo-facebook]:hover,
+.social-icons ion-icon[name=logo-facebook]:hover {
+  color: #3b5998;
+}
+
+.social-icons a[name=call]:hover,
+.social-icons ion-icon[name=call]:hover {
+  color: #1CD600;
+}
+
+.hero-text {
+  width: 80%;
+  margin: 15px 10% 0;
+  text-align: center;
+}
+
+.hero-text img {
+  margin-bottom: 0;
+}
+
+.hero-text h1 {
+  margin-top: 10px;
+}
+
+/* Products */
+.section-products .row {
+  width: 100%;
+  margin: 0;
+}
+
+.section-products .row .col.half-width {
+  width: 48%;
+}
+
+.products-heading {
+  margin-bottom: 20px;
+}
+
+.products-heading h2 {
+  padding-bottom: 15px;
+}
+
+.products-heading p {
+  font-family: 'Kalam', cursive;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 145%;
+}
+
+.middle-heading {
+  padding: 45px 0 15px 0;
+}
+
+.flex-products {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-products.frames figure {
+  width: 22%;
+  height: 400px;
+  padding: 0;
+  margin: 0 20px;
+}
+
+.flex-products.frames figure img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #F8BECC;
+  border-radius: 20px;
+}
+
+.flex-products.frames figure figcaption {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 120%;
+}
+
+.flex-products.others figure {
+  width: 22.5%;
+  height: 250px;
+  padding: 0;
+  margin: 0 20px;
+}
+
+.flex-products.others figure img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #F8BECC;
+  border-radius: 20px;
+}
+
+.flex-products.others figure figcaption {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 120%;
+}
+
+.products-list {
+  width: 100%;
+  list-style-type: none;
+}
+
+.products-list li {
+  display: inline-block;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+.products-list li figure {
+  width: 100%;
+}
+
+.products-list li figure img {
+  width: 100%;
+  height: auto;
+}
+
+/* Recent Products */
+.product-slideshow {
+  width: 100%;
+}
+
+.product-slideshow .slide {
+  display: none;
+  width: 100%;
+}
+
+.product-slideshow .slide.active {
+  display: block;
+}
+
+.product-slideshow .slide .img {
+  width: 100%;
+  height: auto;
+}
+
+.section-recents .row {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.recent-items {
+  width: 100%;
+}
+
+.recent-items img {
+  width: 45%;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.recent-items-text h3 {
+  padding-top: 60px;
+}
+
+.recent-items-text p {
+  font-family: 'Kalam', cursive;
+}
+
+/* Reviews */
+.section-reviews {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.85)), to(rgba(255, 255, 255, 0.85))), url(../images/review-background.jpg);
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url(../images/review-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #000;
+}
+
+.section-reviews .row {
+  width: 90%;
+  margin: 0 auto;
+}
+
+img.review {
+  width: 50px;
+}
+
+blockquote {
+  font-family: 'Kalam', cursive;
+  padding: 20px 20px;
+  line-height: 145%;
+  font-style: italic;
+  position: relative;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 250%;
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: 15px;
+}
+
+blockquote cite {
+  margin-top: 10px;
+  font-size: 140%;
+  font-family: 'Rochester', cursive;
+  color: #C87F91;
+  display: block;
+}
+
+blockquote cite img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* CONTACT */
+form {
+  width: 50%;
+  margin: 10px 25% 0 25%;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  margin: 0 0 5px 0;
+  padding: 5px 0 5px 10px;
+}
+
+form textarea {
+  resize: none;
+}
+
+form button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+  background-color: #B58B95;
+  color: #fff;
+  height: 100px;
+  padding-top: 20px;
+}
+
+footer .footer-nav,
+footer .footer-social {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 120%;
+}
+
+footer .footer-nav li,
+footer .footer-social li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+footer .footer-nav li a,
+footer .footer-social li a {
+  color: #fff;
+}
+
+footer .footer-nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 80%;
+  -webkit-transition: color 0.4s, border 0.1s linear;
+  transition: color 0.4s, border 0.1s linear;
+}
+
+footer .footer-nav li a:hover {
+  color: #8E0C22;
+  border-bottom: 2px solid #8E0C22;
+}
+
+footer .footer-social {
+  float: right;
+}
+
+footer .footer-social li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+footer .footer-social li a,
+footer .footer-social li ion-icon {
+  text-decoration: none;
+  color: #fff;
+  font-size: 90%;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+footer .footer-social li a[name=logo-instagram]:hover,
+footer .footer-social li ion-icon[name=logo-instagram]:hover {
+  color: #e95950;
+}
+
+footer .footer-social li a[name=logo-facebook]:hover,
+footer .footer-social li ion-icon[name=logo-facebook]:hover {
+  color: #3b5998;
+}
+
+footer .footer-social li a[name=call]:hover,
+footer .footer-social li ion-icon[name=call]:hover {
+  color: #1CD600;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer .copyright {
+  color: #8E0C22;
+}
+/*# sourceMappingURL=styles.css.map */

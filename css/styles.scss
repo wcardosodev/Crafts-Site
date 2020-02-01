@@ -1,0 +1,471 @@
+/* BASIC SETUP */
+
+//$color-primary: #F49AB0;
+$color-primary: #F8BECC;
+$color-primary-light: #F6ACBE;
+$color-primary-dark: #C87F91;
+$color-primary-darkest: #B58B95;
+$color-primary-darker: #E2ADBA;
+
+$color-secondary: #8E0C22;
+
+$color-white: #F7F7F7;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Rochester', cursive;
+    //font-family: 'Tangerine', cursive;
+    font-size: 22px;
+    background-color: $color-white;
+}
+
+/* COMMON USE */
+.row {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.wide-row {
+    width: 100%;
+}
+
+section {
+    padding: 60px 0;
+
+    &:nth-child(odd) {
+        background-color: $color-primary-darker;
+
+        h2,
+        h3,
+        p {
+            color: $color-white;
+        }
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 240%;
+}
+
+h2 {
+    font-size: 220%;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 180%;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+@mixin nav-links($font-size) {
+    text-decoration: none;
+    color: #fff;
+    font-size: $font-size;
+    transition: color 0.4s, border 0.1s linear;
+
+    &:hover {
+        color: $color-secondary;
+        border-bottom: 2px solid $color-secondary;
+    }
+}
+
+@mixin nav-social($font-size) {
+    a,
+    ion-icon {
+        text-decoration: none;
+        color: #fff;
+        font-size: $font-size;
+        transition: color 0.4s;
+
+        &[name=logo-instagram]:hover {
+            color: #e95950;
+        }
+
+        &[name=logo-facebook]:hover {
+            color: #3b5998;
+        }
+
+        &[name=call]:hover {
+            color: #1CD600;
+        }
+    }
+}
+
+/* BUTTON */
+.btn-full {
+    border: none;
+    font-size: 140%;
+    background-color: #fff;
+    color: $color-primary;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background-color 0.4s, color 0.4s;
+
+    &:hover {
+        background-color: $color-secondary;
+        color: #fff;
+        animation: bounce 1s;
+    }
+}
+
+/* HEADER */
+header {
+    height: 100vh;
+    background: linear-gradient(rgba($color-primary, 0.90), rgba($color-primary, 0.9)), url(../images/BG2.png);
+    //background-image: linear-gradient(#fff, #FF63DF);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.header-logo {
+    height: 275px;
+    width: 275px;
+    margin-bottom: 0;
+}
+
+.main-nav {
+    list-style-type: none;
+    float: left;
+    margin-top: 40px;
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+
+        a {
+            @include nav-links(120%);
+        }
+    }
+}
+
+.social-icons {
+    list-style-type: none;
+    float: right;
+    margin-top: 40px;
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    @include nav-social(130%);
+
+    // a,
+    // ion-icon {
+    //     text-decoration: none;
+    //     color: #fff;
+    //     font-size: 130%;
+    //     transition: color 0.4s;
+
+    //     &[name=logo-instagram]:hover {
+    //         color: #e95950;
+    //     }
+
+    //     &[name=logo-facebook]:hover {
+    //         color: #3b5998;
+    //     }
+
+    //     &[name=call]:hover {
+    //         color: #1CD600;
+    //     }
+    // }
+}
+
+.hero-text {
+    width: 80%;
+    margin: 15px 10% 0;
+    text-align: center;
+
+    img {
+        margin-bottom: 0;
+    }
+
+    h1 {
+        margin-top: 10px;
+    }
+}
+
+/* Products */
+@mixin flex-products($item-width, $item-height) {
+    figure {
+        width: $item-width;
+        height: $item-height;
+        padding: 0;
+        margin: 0 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border: 1px solid $color-primary;
+            border-radius: 20px;
+        }
+
+        figcaption {
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 120%;
+        }
+    }
+}
+
+.section-products .row {
+    width: 100%;
+    margin: 0;
+
+    .col.half-width {
+        width: 48%;
+    }
+}
+
+.products-heading {
+    margin-bottom: 20px;
+
+    h2 {
+        padding-bottom: 15px;
+    }
+
+    p {
+        font-family: 'Kalam', cursive;
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 145%;
+    }
+}
+
+.middle-heading {
+    padding: 45px 0 15px 0;
+}
+
+.flex-products {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &.frames {
+        @include flex-products(22%, 400px)
+    }
+
+    &.others {
+        @include flex-products(22.5%, 250px)
+    }
+}
+
+.products-list {
+    width: 100%;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+        width: 25%;
+        margin: 0;
+        padding: 0;
+        figure {
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+/* Recent Products */
+.product-slideshow {
+    width: 100%;
+
+    .slide {
+        display: none;
+        width: 100%;
+
+        &.active {
+            display: block;
+        }
+
+        .img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.section-recents {
+    .row {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.recent-items {
+    width: 100%;
+
+    img {
+        width: 45%;
+        height: 300px;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+}
+
+.recent-items-text {
+    h3 {
+        padding-top: 60px;
+    }
+
+    p {
+        font-family: 'Kalam', cursive;
+    }
+}
+
+/* Reviews */
+.section-reviews {
+    background: linear-gradient(rgba(#fff, 0.85), rgba(#fff, 0.85)), url(../images/review-background.jpg);
+    //background-image: linear-gradient(#fff, #FF63DF);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #000;
+
+    .row {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+img.review {
+    width: 50px;
+  }
+  
+blockquote {
+    font-family: 'Kalam', cursive;
+    padding: 20px 20px;
+    line-height: 145%;
+    font-style: italic;
+    position: relative;
+
+    &:before {
+        content: "\201C";
+        font-size: 250%;
+        position: absolute;
+        display: block;
+        top: 5px;
+        left: 15px;
+    }
+
+    cite {
+        margin-top: 10px;
+        font-size: 140%;
+        font-family: 'Rochester', cursive;
+        color: $color-primary-dark;
+        display: block;
+
+        img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* CONTACT */
+form {
+    width: 50%;
+    margin: 10px 25% 0 25%;
+
+    input,
+    textarea {
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        margin: 0 0 5px 0;
+        padding: 5px 0 5px 10px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* FOOTER */
+footer {
+    background-color: $color-primary-darkest;
+    color: #fff;
+    height: 100px;
+    padding-top: 20px;
+
+    .footer-nav,
+    .footer-social {
+        display: inline-block;
+        list-style-type: none;
+        font-size: 120%;
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    .footer-nav {
+        li {
+            a {
+                @include nav-links(80%);
+            }
+        }
+    }
+
+    .footer-social {
+        float: right;
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+
+            @include nav-social(90%);
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .copyright {
+        color: $color-secondary;
+    }
+}
